@@ -250,7 +250,7 @@ mod tests {
         let client = BeatSaverSurf::new();
         let map = client.map(&"2144".try_into().unwrap()).await.unwrap();
 
-        assert_eq!(map.key, "2144");
+        assert_eq!(map.id, "2144");
     }
     #[cfg(feature = "reqwest_backend")]
     #[tokio::test]
@@ -262,7 +262,7 @@ mod tests {
         let client = BeatSaverReqwest::new();
         let map = client.map(&"2144".try_into().unwrap()).await.unwrap();
 
-        assert_eq!(map.key, "2144");
+        assert_eq!(map.id, "2144");
     }
     #[cfg(feature = "ureq_backend")]
     #[test]
@@ -274,6 +274,6 @@ mod tests {
         let client = BeatSaverUreq::new();
         let map = client.map(&"2144".try_into().unwrap()).unwrap();
 
-        assert_eq!(map.key, "2144");
+        assert_eq!(map.id, "2144");
     }
 }
